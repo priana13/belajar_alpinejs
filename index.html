@@ -51,6 +51,15 @@
         console.log('Ini akan dieksekusi ketika komponen alpine sudah selesai dirender')
     })"></div>
 
+    <div x-data="{text:'Alamat Email'}" class="container">
+        <h1 x-show="true">Tampilkan Pesan ini</h1> 
+
+        <input type="text"
+        :placeholder = "text"
+        class="form-control"
+        >
+    </div>
+
 </div>
 
 
