@@ -1,70 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-</head>
-<body>
-
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+  </head>
+  <body>
     <h1 x-data="{ text: 'I ❤️ Alpine' }" x-text="text"></h1>
-    <div x-data="{
+    <div
+      x-data="{
         counter:0, 
         nilai:50,
         showAlert(){
             alert('Hellow World');
         }
-    }" class="container">
-        <button class="btn btn-warning mb-2" x-on:click="counter++; nilai += counter">+</button> <br>
+    }"
+      class="container"
+    >
+      <button
+        class="btn btn-warning mb-2"
+        x-on:click="counter++; nilai += counter"
+      >
+        +
+      </button>
+      <br />
 
-        <button class="btn btn-success" x-on:click="showAlert()">Tampilkan Alert</button>
+      <button class="btn btn-success" x-on:click="showAlert()">
+        Tampilkan Alert
+      </button>
 
-        <h1 x-text="counter"></h1>
-        <h1 x-text="nilai"></h1>
-    </div> 
-
-
-    <br>
-    <br>
-
-    <div x-data="{
-        message:'Ini komponen Alpine'
-    }">
-
-        <div x-init="console.log(message)"></div>
-
+      <h1 x-text="counter"></h1>
+      <h1 x-text="nilai"></h1>
     </div>
 
-    <div x-data="{message2:'ini adalah komponen alpine 2',
+    <br />
+    <br />
+
+    <div
+      x-data="{
+        message:'Ini komponen Alpine'
+    }"
+    >
+      <div x-init="console.log(message)"></div>
+    </div>
+
+    <div
+      x-data="{message2:'ini adalah komponen alpine 2',
     init(){
         console.log('ini adlaah pesan dari atribut init x-data')
     }
-}"></div>
+}"
+    ></div>
 
-<div x-data="{message3:'ini adalah komponen alpine 3',
-}">
-
-    <div x-init="$nextTick(()=>{
+    <div
+      x-data="{message3:'ini adalah komponen alpine 3',
+}"
+    >
+      <div
+        x-init="$nextTick(()=>{
         console.log('Ini akan dieksekusi ketika komponen alpine sudah selesai dirender')
-    })"></div>
+    })"
+      ></div>
 
-    <div x-data="{text:'Alamat Email'}" class="container">
-        <h1 x-show="true">Tampilkan Pesan ini</h1> 
+      <div x-data="{text:'Alamat Email'}" class="container">
+        <h1 x-show="true">Tampilkan Pesan ini</h1>
 
-        <input type="text"
-        :placeholder = "text"
-        class="form-control"
-        >
+        <input type="text" :placeholder="text" class="form-control" />
+      </div>
     </div>
 
-</div>
+    <div
+      class="container mt-3"
+      x-data="{
+        name:''
+    }"
+    >
+      <input type="text" x-on:keyup="name = $event.target.value" />
 
+      <span x-text="name"></span>
 
+      <button x-on:click="alert(name)">Tampilkan Nama</button>
+    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-  
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
