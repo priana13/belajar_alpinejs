@@ -83,7 +83,8 @@
     <div
       class="container mt-3"
       x-data="{
-        name:''
+        name:'',
+        'heading' : '<h2>Hallo ini adalah Heading x html</h2>'
     }"
     >
       <input type="text" x-on:keyup="name = $event.target.value" />
@@ -91,6 +92,22 @@
       <span x-text="name"></span>
 
       <button x-on:click="alert(name)">Tampilkan Nama</button>
+
+      <h5>X-HTML</h5>
+
+      <div x-html="heading"></div>
+
+      <h3>Beljar x Model</h3>
+
+      <div
+        x-data="{
+            email:'priana.saputra@gmail.com'
+        }"
+      >
+        <input type="text" x-model="email" />
+
+        <span x-text="email"></span>
+      </div>
     </div>
 
     <script
