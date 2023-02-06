@@ -108,6 +108,38 @@
 
         <span x-text="email"></span>
       </div>
+
+
+      <div x-data="{
+        daftarBelanja:[
+        
+        {
+            id: 1,
+            name: 'Kopi'
+        },
+        {
+            id: 2,
+            name: 'Gula'
+        },
+        {
+            id: 3,
+            name: 'Garam'
+        }
+        ]
+
+      }">
+
+      <template x-for="(belanja, index) in daftarBelanja" :key="belanja.id">
+
+        <div >
+            <span x-text="belanja.id"></span>
+            <span x-text="belanja.name"></span>
+        </div>
+
+      </template>
+
+
+      </div>
     </div>
 
     <script
